@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Polihack</string>
+    <string name="tvRegister">Register</string>
+    <string name="tvFirstname">Firstname</string>
 </resources>
