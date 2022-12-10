@@ -8,7 +8,14 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="500dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="500dp"
+        android:layout_marginBottom="100dp"
         app:cardBackgroundColor="@color/card_background_dark"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -37,43 +44,57 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image" />
 
-            <TextView
-                android:id="@+id/firstname_tv"
-                style="@style/Theme.TextView"
-                android:layout_width="180dp"
+            <LinearLayout
+                android:id="@+id/linearLayoutTv"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tvFirstname"
+                android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/register_title" />
+                app:layout_constraintTop_toBottomOf="@id/register_title">
 
-            <EditText
-                android:id="@+id/firstname_et"
-                style="@style/Theme.EditText"
-                android:layout_width="180dp"
+                <TextView
+                    android:id="@+id/firstname_tv"
+                    style="@style/Theme.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tvFirstname" />
+
+                <TextView
+                    android:id="@+id/lastname_tv"
+                    style="@style/Theme.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tvLastname" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutEt"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/etFirstname"
-                android:inputType="textEmailAddress"
+                android:orientation="horizontal"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/firstname_tv" />
+                app:layout_constraintTop_toBottomOf="@id/linearLayoutTv">
 
-            <TextView
-                android:id="@+id/lastname_tv"
-                style="@style/Theme.TextView"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:text="@string/tvLastname"
-                app:layout_constraintStart_toEndOf="@id/firstname_tv"
-                app:layout_constraintTop_toBottomOf="@id/register_title" />
+                <EditText
+                    android:id="@+id/firstname_et"
+                    style="@style/Theme.EditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/etFirstname"
+                    android:inputType="textEmailAddress" />
 
-            <EditText
-                android:id="@+id/lastname_et"
-                style="@style/Theme.EditText"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/etLastname"
-                android:inputType="textEmailAddress"
-                app:layout_constraintStart_toEndOf="@id/firstname_et"
-                app:layout_constraintTop_toBottomOf="@id/firstname_tv" />
+                <EditText
+                    android:id="@+id/lastname_et"
+                    style="@style/Theme.EditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/etLastname"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/username_tv"
@@ -82,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tvUsername"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/firstname_et" />
+                app:layout_constraintTop_toBottomOf="@id/linearLayoutEt" />
 
             <EditText
                 android:id="@+id/username_et"
@@ -168,11 +189,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/already_registered_tv"
+                android:textColor="@color/dashboard_subtext_color"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/register_btn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
 
