@@ -2,4 +2,19 @@
     <string name="app_name">Polihack</string>
     <string name="tvRegister">Register</string>
     <string name="tvFirstname">Firstname</string>
+    <string name="tvConfirmPassword">Confirm password</string>
+    <string name="etRetypePassword">retype password</string>
+    <string name="btnRegister">Register</string>
+    <string name="etPassword">password</string>
+    <string name="tvPassword">Password</string>
+    <string name="etEmail">email@example.com</string>
+    <string name="tvEmail">Email</string>
+    <string name="etUsername">username</string>
+    <string name="tvUsername">Username</string>
+    <string name="etLastname">lastname</string>
+    <string name="tvLastname">Lastname</string>
+    <string name="etFirstname">firstname</string>
+    <string name="already_registered_tv">Already registered?</string>
+
+
 </resources>
