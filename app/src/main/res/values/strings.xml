@@ -2,4 +2,6 @@
     <string name="app_name">Polihack</string>
     <string name="tvRegister">Register</string>
     <string name="tvFirstname">Firstname</string>
+    <string name="main_menu_button">Main menu button</string>
+    <string name="profile_button">Profile button</string>
 </resources>
