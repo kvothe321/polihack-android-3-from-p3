@@ -1,7 +1,10 @@
 package com.example.polihack
 
+import android.Manifest
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.polihack.api.APIManager
@@ -13,17 +16,33 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        requestPermissions()
 
         lifecycleScope.launch(Dispatchers.IO) {
             postJson()
         }
+
     }
 
-    private suspend fun postJson() {
+
+    @RequiresApi(Build.VERSION_CODES.Q)
+    private fun requestPermissions() {
+        requestPermissions(
+            arrayOf(
+                Manifest.permission.BODY_SENSORS,
+                Manifest.permission.FOREGROUND_SERVICE,
+                Manifest.permission.ACTIVITY_RECOGNITION,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ), 0
+        )
+    }
+
+    private fun postJson() {
         val userToLogin = UserLogin("rares", "Rares2022#@")
 
         val response = ServiceBuilder.buildService(APIManager::class.java)
